@@ -7,8 +7,7 @@ const server = app.listen('4000',() => log(`Live Rates Data Server started on po
 const socket = require('socket.io');
 const io = socket(server,{
   cors: {
-    origin: "https://web-trader-app.vercel.app",
-    methods: ["GET", "POST"]
+    origin: '*',
   }
 }); // CORS PROBLEM FIXED
 
