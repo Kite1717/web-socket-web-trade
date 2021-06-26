@@ -15,7 +15,7 @@ app.use(cors())
 // Settings
 const PORT = process.env.PORT || 4000;
 //socket fro frontend and each client
-const server = app.listen('4000',() => log(`Live Rates Data Server started on port 4000`));
+const server = app.listen(PORT,() => log(`Live Rates Data Server started on port 4000`));
 const socket = require('socket.io');
 const io = socket(server,{log:false, origins:'*:*'}); // CORS PROBLEM FIXED
 
