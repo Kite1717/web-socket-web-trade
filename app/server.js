@@ -3,14 +3,14 @@ const express = require('express');
 const cors = require('cors')
 const app = express();
 
-
+// CORS PROBLEM FIXED
 app.use(cors())
 // Settings
 const PORT = process.env.PORT || 4000;
 //socket fro frontend and each client
 const server = app.listen(PORT,() => log(`Live Rates Data Server started on port 4000`));
 const socket = require('socket.io');
-const io = socket(server); // CORS PROBLEM FIXED
+const io = socket(server); 
 
 //socket client for live rate
 const client = require('socket.io-client');
