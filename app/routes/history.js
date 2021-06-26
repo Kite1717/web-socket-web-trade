@@ -29,9 +29,20 @@ app.post("/", async (req, res) => {
   axios
     .get(url)
     .then(({ data }) => {
-      return res.json({
-        data,
-      });
+      if (data) {
+        //preprocess historical data
+        let dataArray = [];
+        for (const key in data) {
+          dataArray.push({
+            time: key,
+            value: data[key][symbols.trim()],
+          });
+        }
+
+        return res.json(dataArray);
+      } else {
+        return res.status(500).json({ msg: "Data not found" });
+      }
     })
     .catch((err) => {
       return res.status(500).json(err);
