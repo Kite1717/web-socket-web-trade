@@ -18,14 +18,14 @@ app.post("/", async (req, res) => {
 
   let url = ROOT_URL + "historical/series?";
 
+  console.log(base,"wwwwww")
   url += querystring.stringify({
-    base: base.trim(),
-    start: start.trim(),
-    end: end.trim(),
-    symbols: symbols.trim(),
+    base,
+    start,
+    end,
+    symbols,
     key: KEY,
   });
-
   axios
     .get(url)
     .then(({ data }) => {

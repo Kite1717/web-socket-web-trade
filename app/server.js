@@ -28,6 +28,8 @@ app.use(router);
 
 //socket fro frontend and each client
 const server = app.listen(PORT,() => log(`Live Rates Data Server started on port 4000`));
+
+
 const socket = require('socket.io');
 const io = socket(server); 
 
@@ -54,3 +56,4 @@ socketClient.on('rates', (data)=>{
     //emit socket for FRONTEND
     io.sockets.emit('rts',JSON.parse(data));
 });
+ 
