@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 4000;
 //socket fro frontend and each client
 const server = app.listen(PORT,() => log(`Live Rates Data Server started on port 4000`));
 const socket = require('socket.io');
-const io = socket(server,{log:false, origins:'*:*'}); // CORS PROBLEM FIXED
+const io = socket(server); // CORS PROBLEM FIXED
 
 //socket client for live rate
 const client = require('socket.io-client');
