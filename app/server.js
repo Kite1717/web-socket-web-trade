@@ -13,11 +13,7 @@ app.use(function(req, res, next) {
 //socket fro frontend and each client
 const server = app.listen('4000',() => log(`Live Rates Data Server started on port 4000`));
 const socket = require('socket.io');
-const io = socket(server,{
-  cors: {
-    origin: '*',
-  }
-}); // CORS PROBLEM FIXED
+const io = socket(server,{log:false, origins:'*:*'}); // CORS PROBLEM FIXED
 
 //socket client for live rate
 const client = require('socket.io-client');
