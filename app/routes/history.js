@@ -18,7 +18,6 @@ app.post("/", async (req, res) => {
 
   let url = ROOT_URL + "historical/series?";
 
-  console.log(base,"wwwwww")
   url += querystring.stringify({
     base,
     start,
