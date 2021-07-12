@@ -33,7 +33,7 @@ app.use(router);
 
 
 //socket fro frontend and each client
-const server = app.listen(PORT,() => log(`Live Rates Data Server started on port 4000`));
+const server = app.listen(PORT,() => log(` Rates Data Server started on port 4000`));
 
 
 const io = require('socket.io-client');
@@ -80,10 +80,11 @@ socket.on('message', function (msg) {
 socket.on('price', function (message){
     
     var data = message.split(" ")
+    console.log(data,"wwwww")
     console.log(data[0] + " " + data[1] + " " + data[2] + " " + data[3] + " " + parseDate(data[4]))
 
     //emit socket for FRONTEND
-    io_server.sockets.emit('rates',data)
+    io_server.sockets.emit('rates',{data})
 
 });
 
