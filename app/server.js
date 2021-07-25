@@ -49,7 +49,7 @@ socket.on('connect', function () {
     console.log('Connected! Please CTRL+C and restart if you see this messsage more than twice');
     console.log('disconnecting and reconnecting can take upto a minute');
     console.log('.......');
-    socket.emit('login', {userKey: "wszNMderyPACvzI46Pqw"});
+    socket.emit('login', {userKey: "sioehJ71_sMAGqvELnPSQ"});
 });
 
 socket.on('disconnect', function (msg) {
